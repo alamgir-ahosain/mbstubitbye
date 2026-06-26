@@ -9,6 +9,12 @@ import java.util.Map;
 @RestController
 public class HealthController {
 
+
+    @GetMapping("/")
+    public ResponseEntity<String> root() {
+        return ResponseEntity.ok("mbstubitbye is running...");
+    }
+
     @GetMapping("/health")
     public ResponseEntity<Map<String, String>> health() {
         return ResponseEntity.ok(Map.of("status", "ok"));
