@@ -15,16 +15,9 @@ public class TransactionEntry {
     private String transactionId;
 
     @NotBlank(message = "timestamp is required in each transaction entry")
-    @Pattern(
-            regexp = "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$",
-            message = "timestamp must be a valid ISO-8601 UTC format e.g. 2024-01-15T10:30:00Z"
-    )
     private String timestamp;
 
-    @Pattern(
-            regexp = "^(transfer|payment|cash_in|settlement)$",
-            message = "type must be one of: transfer, payment, cash_in, settlement"
-    )
+
     @NotBlank(message = "type is required in each transaction entry")
     private String type;
 
@@ -36,10 +29,7 @@ public class TransactionEntry {
     @NotBlank(message = "counterparty is required in each transaction entry")
     private String counterparty;
 
-    @Pattern(
-            regexp = "^(success|failed|pending|reversed|cancelled)$",
-            message = "status must be one of: success, failed, pending, reversed, cancelled"
-    )
+
     @NotBlank(message = "status is required in each transaction entry")
     private String status;
 }
