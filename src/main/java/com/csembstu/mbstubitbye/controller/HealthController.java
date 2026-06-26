@@ -15,6 +15,7 @@ public class HealthController {
         return ResponseEntity.ok("mbstubitbye is running...");
     }
 
+
     @GetMapping("/health")
     public ResponseEntity<Map<String, String>> health() {
         return ResponseEntity.ok(Map.of("status", "ok"));
